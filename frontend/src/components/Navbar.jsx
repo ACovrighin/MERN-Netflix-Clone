@@ -4,12 +4,15 @@ import { Search } from 'lucide-react';
 import { LogOut } from 'lucide-react';
 import { useAuthStore } from '../store/authUser.js';
 import { Menu } from 'lucide-react';
+import { useContentStore } from '../store/content.js';
 
 
 const Navbar = () => {
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
     const {user, logout} =useAuthStore();
+
+	const  { setContentType} = useContentStore();
 
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
     
